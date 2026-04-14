@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: shakthi0411/deploy-backend:latest
+          ports:
+            - containerPort: 5000
+          
+          env:
+            - name: AWS_ACCESS_KEY_ID
+              value: "YOUR_ACCESS_KEY"
+            - name: AWS_SECRET_ACCESS_KEY
+              value: "YOUR_SECRET_KEY"
+            - name: AWS_REGION
+              value: "ap-south-1"

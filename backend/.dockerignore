@@ -1,0 +1,6 @@
+# Files to exclude from Docker image (keeps image smaller)
+node_modules
+npm-debug.log
+.env
+.git
+.gitignore
